@@ -70,6 +70,7 @@
         --color_dic: #031f5f;
         --color_dic_rgb: 3,31,95;
         }
+        *{ box-sizing: border-box;}
         body, html
         {
             margin: 0;
@@ -92,23 +93,33 @@
             text-align: left;
             position: relative;
         }
-        #header-hamburger{
+       
+        #header-hamburger,#header-pay,#header-talk,#header-notice{
             position: absolute;
             top: 18px;
-            left: -10px;
-            padding:10px;
             display: inline-block;
             background: none;
             border:none;
             cursor: pointer;
-            
         }
-        #header-hamburger:hover {
+
+        #header-hamburger>div, #header-pay>div, #header-talk>div, #header-notice>div {
+            position: relative;
+            z-index: 1;
+            background-image: url(../sp_main.d5b6c236.png);
+            width: 26px;
+            height: 26px;
+            background-repeat: no-repeat;
+            background-size: 432px 412px;
+        }
+
+        #header-hamburger:hover,  #header-pay:hover,  #header-talk:hover,  #header-notice:hover {
             background-color: var(--color_option_bg);
             border-radius: 50%;
         }
-        #header-hamburger:hover::before {
-            
+
+        #header-hamburger:hover::before, #header-pay:hover::before ,#header-talk:hover::before ,  #header-notice:hover::before
+         {
             position: absolute;
             content: "";
             left: 1px;
@@ -118,15 +129,45 @@
             background-color: var(--color_option_bg);
             border-radius: 50%;
         }
+
+        #header-hamburger{
+            left: -10px;
+            padding:10px;
+        }
+
         #header-hamburger>div{
-            position: relative;
-            z-index: 1;
-            background-image: url(../sp_main.d5b6c236.png);
-            width: 26px;
-            height: 26px;
-            background-repeat: no-repeat;
-            background-size: 432px 412px;
             background-position: -335px -81px;
+        }
+
+        #header-pay{
+            left: 43px;
+            padding:7px;
+
+        }
+    
+        #header-pay>div{
+         background-position: -294px -177px;
+         width: 32px;
+         height: 32px;
+        }
+
+        #header-talk{
+            right:40px;
+            padding:10px;
+        }
+    
+        #header-talk>div{
+         background-position: -335px -189px;
+        }
+
+
+        #header-notice{
+            right: -10px;
+            padding:10px;
+        }
+   
+       #header-notice>div{
+           background-position: -335px -135px;
         }
         .blind{ 
             display: none;
@@ -144,6 +185,19 @@
                     <div></div>
                     <span class="blind">확장 영역</span>
                 </button>
+                <button id="header-pay">
+                    <div></div>
+                    <span class="blind">네이버 페이</span>
+                </button>
+                <button id="header-talk">
+                    <div></div>
+                    <span class="blind">네이버 톡</span>
+                </button>
+                <button id="header-notice">
+                    <div></div>
+                    <span class="blind">알림 혜택</span>
+                </button>
+                 
             </div>
             <div id="search"></div>
             <div id="nav"></div>
