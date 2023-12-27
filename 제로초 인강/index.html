@@ -247,6 +247,8 @@
                 height: 24px;
                 fill: #03c75a;
             }
+
+
             #search-input {
                 width: 480px;
                 height: 100%;
@@ -256,6 +258,14 @@
                 border: none;
                 outline: none;
             }
+            #search-input::placeholder{
+                color:white;
+            }
+            #search-input:focus::placeholder{
+                color:#e4e4e4
+            }
+
+
             #search-right{
                 display: flex;
                 justify-content: flex-end;
@@ -263,6 +273,7 @@
                 flex:1; 
 
             }
+          
             #search-keyboard,#search-recent,#search-button{
                 background: transparent;
                 border: none;
@@ -278,6 +289,14 @@
             width: 24px;
             height: 14px;
             }
+
+            #search-keyboard:hover::before {
+            filter: brightness(0.7);
+           }
+
+
+
+
             #search-recent::before {
             content: "";
             display: block;
@@ -288,6 +307,9 @@
             width: 10px;
             height: 6px;
            }
+           #search > form:hover {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+          }
          
 
             
@@ -307,7 +329,7 @@
                       </a>
                   
                     <label for="search-input" class="blind">검색어 입력</label>
-                    <input id="search-input" type="text" placeholder="검색어를 입력하세요"/>
+                    <input id="search-input" type="text" placeholder="검색어를 입력하세요."/>
                     <div id="search-right">
                         <button href="#" id="search-keyboard">
                           <span class="blind">입력도구</span>
