@@ -1,0 +1,138 @@
+body,html,p
+{
+    margin:0;
+    padding:0;
+    height: 100%;
+}
+
+.grey-section {
+    background-color:#2B3137;
+    height: 90%; 
+    width: 100%;
+    background-image: url(../images/background.svg);
+}
+
+.white-section {
+    background-color:#FFFEFF;
+    height: 10%; 
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.white-section img {
+    height:max-content;
+    position: relative;
+    margin-left: auto; 
+    margin-right: 90px;
+}
+.left-section{
+    width: 60%;
+}
+.right-section{
+    width: 40%;
+}
+header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+
+.wrap-center{
+    padding: 0 10% 0 10%;
+}
+.navigation{
+    margin-right: 20%;
+   
+}
+button{
+    border: none;
+    background-color: #2B3137;
+    font-size: 15px;
+    font-weight: 300;
+    color: #FFFEFF;
+    cursor: pointer; 
+    font-style:normal;
+}
+.underline{
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+.title{
+    font-size: 50px;
+    font-weight: bolder;
+    color:#FFFEFF;
+   
+}
+.explanation{
+    color: #FFFEFF;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+p{
+    margin-left: 35%;
+}
+.title{
+    margin-top: 24%;
+}
+.sign-in{
+    color: #FFFEFF;
+    border: none;
+}
+.sign-up{
+    color: #FFFEFF;
+    border: #FFFEFF;
+    border-radius: 10px;
+ 
+
+}
+.wrap-center{
+    display: flex;
+}
+.header{
+    margin-left:40px;
+    margin-top: 23px;
+}
+.search-input{
+    background-color: transparent 20%;
+    padding:10px 20px;
+    border-radius: 10px;
+}
+
+form{
+    background-color: #FFFEFF;
+    border-radius: 10px;
+    margin-right: 129px;
+    margin-top: 40px;
+    height:400px;
+    width: 391px;
+    padding: 40px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
+}
+.wrapforinput{
+    margin-left: 29px;
+
+}
+div {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-wrap{
+    width: 343px;
+}
