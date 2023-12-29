@@ -1,0 +1,42 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(6, 1fr); 
+    gap: var(--gutter) ; 
+   
+}
+
+.grid-item {
+    border-color: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    background-color: #333333;
+   
+}
+
+.empty {
+}
+
+.interview-pict{
+    border-radius: 50%;
+   
+}
+.interview-pict >img{
+    width: 77px;
+    height: 77px;
+}
+
+.interview-info-wrapper{
+    width: 294px;
+    height: 70px;
+}
+.interview-info{
+    width: 68px;
+    height: 70px;
+}
+.interview-major >span{
+    width: 68px;
+    height: 26px;
+}
