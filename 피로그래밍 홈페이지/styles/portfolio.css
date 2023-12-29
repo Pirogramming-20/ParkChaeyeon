@@ -1,0 +1,125 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin-bottom: 16px;
+}
+
+section{
+    padding: 0 40px 50px 40px;
+    flex-grow: 1;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.current {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.next {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.next .icon {
+    margin-left: 10px; 
+    text-decoration: none; 
+    font-size: 20px; 
+}
+
+.project-container
+ {
+  width: 100%;
+  background-color: #333333;
+  border-radius: 10px;
+  padding: var(--gutter);
+  display: flex;
+  gap: var(--gutter);
+  margin-bottom: var(--gutter);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+ 
+
+}
+.project-container img{
+    justify-content: center;
+}
+
+
+.project-container:hover {
+  top: -2px;
+}
+.project-pic {
+  width: 150px;
+  height: 110px;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project-pic img {
+    width: 100%;
+    object-fit: contain;
+    transition: 0.3s;
+    padding: 1rem 2rem;
+    border-radius: 25%;
+    justify-content: center;
+  }
+  .project-container:hover .project-pic img {
+    transform: scale(1.1);
+  }
+
+  .project-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+
+  .members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+   
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+
+  .members >li {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    background-color: gray;
+    padding: 6px 8px;
+    border-radius: 3px;
+  }
+
+  .members li.leader {
+    background-color: #2188b6;
+    color: white;
+    }
+
+  @media screen and (max-width: 500px){
+    .members{
+      display: grid;
+      grid-template-columns: repeat(3, 60px);
+      justify-content: center;
+    }
+    .project-content--introduction > p{
+      text-align: center;
+      color: gray;
+    }
+  }
+
+  .project-content--name{
+    margin:0 0 11px;
+    font-size: 3.5rem;
+   
+  }
