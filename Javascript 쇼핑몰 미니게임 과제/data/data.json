@@ -1,3 +1,6 @@
+/* 데이터 보관 장소 */
+/* javascript object notation*/
+/* item 은 배열 그 안에 object object 는 키 와 값을 갖는다*/
 {
   "items": [
     {
