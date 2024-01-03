@@ -8,7 +8,6 @@ function loadItems() {
 // Update the list with the given items
 // data.json에서 받아온 인자인 items 를 html에 추가하자 
 function displayItems(items) {
-  //container 정의
   const container = document.querySelector('.items');
 
   //items 안의 object를 html 속 li 태그로 변환 ->map 으로
@@ -25,6 +24,28 @@ function createHTMLString(item) {
         <span class="item__description">${item.gender}, ${item.size}</span>
     </li>
     `;
+}
+
+
+function setEventListeners(items) {
+  const logo = document.querySelector('.logo');
+  const buttons = document.querySelector('.buttons');
+  logo.addEventListener('click', () => displayItems(items));
+  buttons.addEventListener('click', event => onButtonClick(event, items));
+}
+
+// 버튼 클릭시 처리할 함수
+function onButtonClick(event, items) {
+  const dataset = event.target.dataset;
+  const key = dataset.key;
+  const value = dataset.value;
+
+  // 함수 끝내기 
+  if (key == null || value == null) {
+    return;
+  }
+
+  displayItems(items.filter(item => item[key] === value));
 }
 
 
