@@ -5,6 +5,28 @@ function loadItems() {
     .then(json => json.items);
 }
 
+// Update the list with the given items
+// data.json에서 받아온 인자인 items 를 html에 추가하자 
+function displayItems(items) {
+  //container 정의
+  const container = document.querySelector('.items');
+
+  //items 안의 object를 html 속 li 태그로 변환 ->map 으로
+  //문자열의 배열을 한가지의 문자열로 병합하기 위해 쓰는 것 ->join api
+  container.innerHTML = items.map(item => createHTMLString(item)).join('');
+}
+
+// Create HTML list item from the given data item
+// json 의 items 를 html의 li 태그로 바꾸는 함수
+function createHTMLString(item) {
+  return `
+    <li class="item">
+        <img src="${item.image}" alt="${item.type}" class="item__thumbnail" />
+        <span class="item__description">${item.gender}, ${item.size}</span>
+    </li>
+    `;
+}
+
 
 // main 에 loadItems 함수 정의
 // data.json파일을 읽어오는데 시간이 걸려 그냥 item이 아니라 promise를 읽어온다 읽어오지 못했을 경우 catch이용
