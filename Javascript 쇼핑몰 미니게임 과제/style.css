@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'IAMAPLAYER';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/IAMAPLAYER.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   /* color */
   --color-black: #3f454d;
@@ -19,21 +26,21 @@
 }
 
 body {
-
-  height: 100vh;
   /*  v h  viewpoint화면 전체 차지 */
+  height: 100vh;
   background-color: var(--color-black);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  font-family: 'IAMAPLAYER', sans-serif;
 }
 
 .logo {
   cursor: pointer;
-  transition: transform var(--animation-duration) ease;
   /*커질때 효과*/
+  transition: transform var(--animation-duration) ease;
+
 }
 
 .btn {
@@ -47,8 +54,8 @@ body {
 
 .btn:hover,
 .logo:hover {
-  transform: scale(1.1);
   /* 그냥 커지는거*/
+  transform: scale(1.1);
 }
 
 .buttons {
@@ -84,8 +91,14 @@ body {
   height: 60%;
   list-style: none;
   padding-left: 0;
-  overflow-y: scroll;
   /* 스크롤시 list 만 위 아래가 되도록*/
+  overflow-y: scroll;
+
+}
+
+.item__description.invisible {
+  background-color: var(--color-white);
+  display: none;
 }
 
 .item {

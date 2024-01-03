@@ -5,42 +5,11 @@ function loadItems() {
     .then(json => json.items);
 }
 
-// Update the list with the given items
-function displayItems(items) {
-  const container = document.querySelector('.items');
-  container.innerHTML = items.map(item => createHTMLString(item)).join('');
-}
 
-// Create HTML list item from the given data item
-function createHTMLString(item) {
-  return `
-    <li class="item">
-        <img src="${item.image}" alt="${item.type}" class="item__thumbnail" />
-        <span class="item__description">${item.gender}, ${item.size}</span>
-    </li>
-    `;
-}
-
-function onButtonClick(event, items) {
-  const dataset = event.target.dataset;
-  const key = dataset.key;
-  const value = dataset.value;
-
-  if (key == null || value == null) {
-    return;
-  }
-
-  displayItems(items.filter(item => item[key] === value));
-}
-
-function setEventListeners(items) {
-  const logo = document.querySelector('.logo');
-  const buttons = document.querySelector('.buttons');
-  logo.addEventListener('click', () => displayItems(items));
-  buttons.addEventListener('click', event => onButtonClick(event, items));
-}
-
-// main
+// main 에 loadItems 함수 정의
+// data.json파일을 읽어오는데 시간이 걸려 그냥 item이 아니라 promise를 읽어온다 읽어오지 못했을 경우 catch이용
+// data.json파일을 읽어오는데 시간이 걸림 :비동기 작업이라. 즉, 파일을 읽는 동안 JavaScript 코드의 다른 부분이 실행될 수 있도록 
+//  Promise 객체는 .then() 메소드를 통해 이행 상태일 때의 처리를, .catch() 메소드를 통해 거부 상태일 때의 처리
 loadItems()
   .then(items => {
     displayItems(items);
