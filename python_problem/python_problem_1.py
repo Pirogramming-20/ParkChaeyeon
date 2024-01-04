@@ -20,6 +20,7 @@ while(누적num<31):
             누적num += 1
             print("PlayerA:", BR31[누적num - 1])
             if 누적num >= 31:
+                print("playerB win!")
                 break
 
     #B로 넘어감 방지
@@ -45,6 +46,7 @@ while(누적num<31):
         print("PlayerB:", BR31[누적num - 1])
 
         if 누적num >= 31:
+            print("playerA win!")
             break
 
 
