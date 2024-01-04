@@ -10,4 +10,4 @@ while True:
     except ValueError:
         print("정수를 입력하세요.")
 
-
+print("입력받은 숫자:",num)
