@@ -1,5 +1,5 @@
-
-def brGame():
+import random
+def brGame_playerB():
      while True:
         try:
             num = int(input("부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) : "))
@@ -12,20 +12,23 @@ def brGame():
         except ValueError:
             print("정수를 입력하세요.")
 
+def brGame_computer():
+    return random.randint(1, 3)
 
 
 
-#A
+
+#computer
 누적num=0
 while(누적num<31):
     num=0
     BR31 = [i for i in range(1, 32)]
     
 
-    num=brGame()
+    num=brGame_computer()
     for i in range(num):
             누적num += 1
-            print("PlayerA:", BR31[누적num - 1])
+            print("computer:", BR31[누적num - 1])
             if 누적num >= 31:
                 print("playerB win!")
                 break
@@ -36,13 +39,13 @@ while(누적num<31):
 
 
     #B 
-    num=brGame()
+    num=brGame_playerB()
     for i in range(num):
         누적num += 1
         print("PlayerB:", BR31[누적num - 1])
 
         if 누적num >= 31:
-            print("playerA win!")
+            print("computer win!")
             break
 
 
