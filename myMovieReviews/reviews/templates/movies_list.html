@@ -9,16 +9,18 @@
 <body>
 
     <div class="header">
-        <div class="title">MOVIES REVIEW</div>
-        <button class="add-button">ADD REVIEW</button>
+        <div class="title"><a href="/reviews">MOVIES REVIEW</a></div>
+        <a href="/reviews/create">ADD REVIEW</a>
     </div>
 
     <!--템플릿 문법-->
 
     {% for review in reviews %}
-    <p>{{review.title}}</p>
+    <p><a href="/reviews/{{review.id}}">{{review.title}}</a></p>
     <p>{{review.genre}}</p>
     <p>{{review.rating}}</p>
+    <!--<p>{{review.year}}</p>-->
+
     {% endfor %}
 
     <!-- <div class="movie-container">

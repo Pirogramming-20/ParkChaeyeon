@@ -1,0 +1,15 @@
+<div class="header">
+    <div class="title"><a href="/reviews">MOVIES REVIEW</a></div>
+    <a href="/reviews/create">ADD REVIEW</a>
+</div>
+<h1> 리뷰 작성하기 </h1>
+
+<form action="/reviews/create " method="post">
+    {% csrf_token %}
+    <input name="title" placeholder="제목" /> <br />
+    <input name="year" placeholder="개봉연도" /> <br />
+    <textarea name="content" cols="30" rows="10" placeholder="리뷰"></textarea>
+    <div>
+        <input type="submit" value="작성완료">
+    </div>
+</form>
