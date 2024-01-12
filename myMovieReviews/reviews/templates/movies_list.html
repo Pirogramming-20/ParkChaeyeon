@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIES REVIEW</title>
+
+<body>
+
+    <div class="header">
+        <div class="title">MOVIES REVIEW</div>
+        <button class="add-button">ADD REVIEW</button>
+    </div>
+
+    <!--템플릿 문법-->
+
+    {% for review in reviews %}
+    <p>{{review.title}}</p>
+    <p>{{review.genre}}</p>
+    <p>{{review.rating}}</p>
+    {% endfor %}
+
+    <!-- <div class="movie-container">
+        
+        <div class="movie-card">
+            <p>제목</p>
+            <p>G</p>
+            <p>Rating: ★★★★☆</p>
+        </div>
+
+        
+        <div class="movie-card">
+            <p>제목</p>
+            <p>장르</p>
+            <p>Rating: ★★★☆☆</p>
+        </div>
+
+        
+        <div class="movie-card">
+            <p>제목</p>
+            <p>장르</p>
+            <p>Rating: ★★★★☆</p>
+        </div>
+
+  
+        <div class="movie-card">
+            <p>제목</p>
+            <p>장르</p>
+            <p>Rating: ★★★★☆</p>
+        </div>
+    </div> -->
+
+</body>
+
+</html>
