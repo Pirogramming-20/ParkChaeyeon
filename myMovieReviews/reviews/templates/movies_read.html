@@ -11,3 +11,10 @@
 <p>별점:</p>
 <p>러닝타임:</p>
 <span></span>
+
+<a href="/reviews/{{review.id}}/update">수정하기</a>
+
+<form action="/reviews/{{review.id}}/delete" method="post">
+    {% csrf_token %}
+    <input type="submit" value="삭제하기">
+</form>

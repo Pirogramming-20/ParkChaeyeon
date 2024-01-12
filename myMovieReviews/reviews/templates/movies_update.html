@@ -1,0 +1,11 @@
+<h1> 글 수정하기 </h1>
+
+<form action="/reviews/{{ review.id }}/update" method="post">
+    {% csrf_token %}
+    <input name="title" placeholder="제목" value="{{ review.title }}" /> <br />
+    <input name="year" placeholder="개봉연도" value="{{ review.year }}" /> <br />
+    <textarea name="content" cols="30" rows="10" placeholder="내용">{{review.content}}</textarea>
+    <div>
+        <input type="submit" value="수정완료">
+    </div>
+</form>

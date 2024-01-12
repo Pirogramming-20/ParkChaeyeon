@@ -3,18 +3,18 @@ from .models import*
 
 # Create your views here.
 def movies_list(request):
-    reviews=Reviews.objects.all()
+    review=Reviews.objects.all()
     context={
-        "reviews" : reviews
+        "reviews" : review
     }
-    print(reviews)
+    print(review)
 
     return render(request, "movies_list.html",context)
 
 def movies_read(request,pk):
-    detail=Reviews.objects.get(id=pk)
+    review=Reviews.objects.get(id=pk)
     context={
-        "reviews" : detail
+        "reviews" : review
     }
     return render(request,'movies_read.html',context)
 
@@ -27,3 +27,24 @@ def movies_create(request):
         )
         return redirect("/reviews")
     return render(request,"movies_create.html")
+
+def movies_update(request,pk):
+    review=Reviews.objects.get(id=pk)
+    if request.method =="POST":
+        review.title=request.POST["title"]
+        review.year=request.POST["year"]
+        review.content=request.POST["content"]
+        review.save()
+        return redirect(f"/reviews/{pk}")
+   
+    context={
+        "review":review
+    }
+    return render(request,"movies_update.html",context) 
+
+
+def movies_delete(request,pk):
+    if request.method =="POST":
+        review=Reviews.objects.get(id=pk)
+        review.delete()
+    return redirect("/reviews")
