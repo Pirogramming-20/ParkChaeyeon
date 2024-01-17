@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  
+  <h2>{{tool.name}}</h2>
+  <p>{{tool.kind}}</p>
+  <p>관심도: {{tool.content}}</p>
+
+  <a>만들 수 있는 sw목록</a>
+  {% for post in posts %}
+  <div>
+    <h3>{{ post.title }}</a></h3>
+  </div>
+{% endfor %}
+ 
+  <form action="{% url 'tools:delete' tool.pk %}" method="POST">
+    {%csrf_token%} 
+    <button type="submit" >삭제하기</button>
+  </form>
+  <a href="{% url 'tools:tool_list'  %}" >목록</a>
+  <a href="{% url 'tools:update' tool.pk %}" >수정하기</a>
+{% endblock content %}

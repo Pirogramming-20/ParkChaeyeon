@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block head%}
+  <title>my sw idea manage</title>
+{%endblock%}
+
+{%block content%}
+  
+  <div>
+    {% for post in posts %}
+
+    <div>
+    <!--img-->
+      {% if post.photo.url != null and post.photo.url != '' %}
+        <img src="{{post.photo.url}}", alt="사진">
+      {% else %}
+     
+      <img src="{% static 'posts/image/no_image.png'%}">
+      {% endif %}
+      <span class="star-button" data-post-id="{{ post.id }}">⭐</span>
+  
+    <!--내용-->
+    <div>
+      <a href="{% url 'posts:detail' post.pk%}">
+        {{post.title}}
+      </a>
+      <p>예상 개발툴 :{{post.tool.name}}</p>
+    </div>
+
+    <!--관심도 버튼 -->
+
+    <div id="main">
+      <i class="ri-indeterminate-circle-line" id="minus"></i>
+      <span id="cnt">{{ post.interest }}</span>
+      <i class="ri-add-circle-line" id="plus"></i>
+    </div>
+    {% endfor %}
+  </div>
+{%endblock%}

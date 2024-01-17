@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{%block head %}
+  <title>tool_detail</title>
+{%endblock%}
+
+{%block content%}
+  <form
+    action="{% url 'tools:update' pk %}"
+    method="post"
+  >
+    {%csrf_token%} {{form.as_p}}
+    <button>수정 완료</button>
+  </form>
+  <hr>
+  <form
+    action="{% url 'tools:delete' pk %}"
+    method="post"
+  >
+    {%csrf_token%}
+    <button>삭제</button>
+  </form>
+{%endblock%}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block head%}
+  <title>my sw idea manage</title>
+{%endblock%}
+
+{%block content%}
+
+  <div>
+    {% for tool in tools %}
+
+    <div>
+      <a href="{% url 'tools:detail' tool.pk %}">
+        {{tool.name}}
+      </a>  
+      <p>종류: {{ tool.kind }}</p>
+      <p>설명: {{ tool.content }}</p>
+    </div>
+    {% endfor %}
+  </div>
+{%endblock%}
