@@ -1,0 +1,113 @@
+.container,
+.main__container,.detail__container,.create-comment {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+  
+  }
+  
+  .container img {
+    border-radius: 50%; 
+    width: 150px; 
+    height: 150px;
+    
+
+  }
+
+  .profile-content-wrapper {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  
+  .profile-first-line {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+  }
+  
+  .username {
+    font-weight: bold;
+    font-size: 24px;
+    padding-left: 85px;
+  }
+  
+  .buttons button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .buttons button i{
+    background: none; 
+    border: none;
+    outline: none; 
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 40px;
+  }
+  
+  .content span {
+    font-size: 16px;
+  }
+
+
+ 
+  .main__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3개의 동일한 크기의 칼럼 생성 */
+    grid-gap: 20px; 
+    padding: 20px;
+    margin: 0 auto; 
+  }
+
+  .post__container {
+    width: 100%; 
+    transition: 0.3s; 
+    border-radius: 5px; 
+  }
+
+  .post__container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); 
+  }
+
+
+  .post__img img {
+    width: 100%; /* 컨테이너에 맞춰 이미지 너비 설정 */
+    height: auto; /* 이미지 높이를 자동으로 설정하여 비율 유지 */
+  }
+
+
+  .detail__container img {
+    width: 40%;
+    height: auto;
+    object-fit: cover; /* 이미지 비율 유지 */
+  }
+
+  .detail__content {
+    width: 38%; /* 간격 유지를 위해 2% 줄임 */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detail__content h2 {
+    margin-bottom: 20px; /* h2와 댓글 섹션 사이의 간격 */
+  }
+
+  .comments-section {
+    width: 100%;
+  }
+
+  .comment {
+    margin-bottom: 10px; /* 댓글들 사이의 간격 */
+  }

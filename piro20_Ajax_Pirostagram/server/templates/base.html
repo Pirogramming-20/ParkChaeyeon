@@ -1,0 +1,51 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>pirostagram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{%static 'css/style.css'%}"> <!--manage.py 기준-->  
+  <link rel="stylesheet" href="{%static 'css/reset.css'%}">  
+  <script src="https://kit.fontawesome.com/5658349e28.js" crossorigin="anonymous"></script>
+  {%block head%}
+
+
+  {% endblock %}
+</head>
+<body>
+  <main>
+    <div class="container">
+        <img src="{%static 'images/profile.png'%}" alt="프로필 사진" >
+
+        <div class="profile-content-wrapper">
+          <div class="profile-first-line">
+              <div class="username" style="margin-left: 35px;">mnu_0722</div>
+              <div class="buttons">
+                  <button>프로필 편집</button>
+                  <button>보관된 스토리 보기</button>
+                  <button><i class="fa-solid fa-gears"></i></button>
+              </div>
+          </div>
+          
+          <div class="content">
+              <span>게시물 {{post_count }}</span>
+              <span>팔로워 420</span>
+              <span>팔로잉 445</span>
+          </div>
+        </div>
+        
+    </div>
+
+    {%block content%}
+      
+    
+    {%endblock%}
+  </main>
+
+
+{% block extra %}
+{% endblock %}
+ 
+</body>
+</html>

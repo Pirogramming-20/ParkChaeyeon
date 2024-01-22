@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{%block head%}
+  <title>comment_create</title>
+{% endblock %}
+
+{%block content%}
+  <form
+    action="{% url 'comments:create' post_pk=post.id   %}"
+    method="post"
+    enctype="multipart/form-data"
+    class="create-comment"
+  >
+    {%csrf_token%} {{form.as_p}}
+    <button class="btn btn-success" style="margin-left: 10px;">등록하기</button>
+  </form>
+{%endblock%}
